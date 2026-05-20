@@ -38,7 +38,7 @@ resource "aws_instance" "vm" {
 
   instance_type = var.instance_type
 
-  key_name = var.key_pair
+  key_name = "ec2-latest-key"   
 
   associate_public_ip_address = true
 
