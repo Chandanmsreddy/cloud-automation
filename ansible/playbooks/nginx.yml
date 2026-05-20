@@ -1,0 +1,16 @@
+---
+- name: Deploy NGINX
+  hosts: servers
+  become: yes
+
+  tasks:
+
+    - name: Copy Docker Compose
+      copy:
+        src: ../../docker/docker-compose.yml
+        dest: /home/{{ ansible_user }}/docker-compose.yml
+
+    - name: Start NGINX
+      shell: |
+        cd /home/{{ ansible_user }}
+        docker compose up -d

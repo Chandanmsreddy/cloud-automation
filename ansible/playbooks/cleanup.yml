@@ -1,0 +1,17 @@
+---
+- name: Cleanup Servers
+  hosts: servers
+  become: yes
+
+  tasks:
+
+    - name: Stop Docker Containers
+      shell: docker compose down
+      args:
+        chdir: /home/{{ ansible_user }}
+      ignore_errors: yes
+
+    - name: Remove Docker Compose File
+      file:
+        path: /home/{{ ansible_user }}/docker-compose.yml
+        state: absent

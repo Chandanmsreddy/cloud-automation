@@ -1,0 +1,24 @@
+---
+- name: Validate Servers
+  hosts: servers
+  become: yes
+
+  tasks:
+
+    - name: Check hostname
+      command: hostname
+
+    - name: Check OS
+      command: cat /etc/os-release
+
+    - name: Check CPU
+      command: nproc
+
+    - name: Check Memory
+      command: free -h
+
+    - name: Check Disk
+      command: df -h
+
+    - name: Check uptime
+      command: uptime

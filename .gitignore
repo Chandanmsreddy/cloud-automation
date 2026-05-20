@@ -1,0 +1,5 @@
+generated/.terraform/
+generated/*.tfstate
+generated/*.backup
+generated/tfplan
+logs/*.log
