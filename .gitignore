@@ -1,5 +1,4 @@
-generated/.terraform/
-generated/*.tfstate
-generated/*.backup
-generated/tfplan
-logs/*.log
+.terraform/
+*.tfstate
+*.tfstate.backup
+terraform.tfvars
